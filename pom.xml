@@ -4,22 +4,50 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>MirthPluginSample</artifactId>
+    <groupId>net.kaurpalang</groupId>
+    <artifactId>mirthpluginsample</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>server</module>
+        <module>shared</module>
+        <module>client</module>
+        <module>distribution</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <maven.processor.plugin.version>4.5</maven.processor.plugin.version>
+        <maven.assembly.plugin.version>3.3.0</maven.assembly.plugin.version>
+
+        <mirth.plugin.version>1.0-SNAPSHOT</mirth.plugin.version>
+
+        <!-- Where should annotation processor generate aggregation file -->
+        <processor.aggregator.path>distribution/aggregator/aggregated.json</processor.aggregator.path>
+
+        <!-- Plugin details -->
+        <plugin.path>plugintest</plugin.path>
+        <plugin.name>Sample testing plugin</plugin.name>
+        <plugin.url>www.com</plugin.url>
+        <plugin.author>Kaur Palang</plugin.author>
+        <plugin.version>15</plugin.version>
+        <plugin.mirthVersion>3.10.1</plugin.mirthVersion>
+        <plugin.archive.name>sampleplugin</plugin.archive.name>
     </properties>
 
     <dependencies>
+        <!-- Helper plugin to handle Mirth plugin specific tasks. -->
         <dependency>
             <groupId>net.kaurpalang</groupId>
             <artifactId>mirth-plugin-maven-plugin</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <!-- Another plugin to manage annotation processing -->
         <dependency>
             <groupId>org.bsc.maven</groupId>
             <artifactId>maven-processor-plugin</artifactId>
@@ -29,16 +57,32 @@
     </dependencies>
 
     <build>
+        <!-- Specify naming pattern for submodules. For example pluginname-client.jar -->
+        <finalName>${project.parent.artifactId}-${project.artifactId}</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.bsc.maven</groupId>
                 <artifactId>maven-processor-plugin</artifactId>
+                <version>${maven.processor.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>process</id>
                         <goals>
                             <goal>process</goal>
                         </goals>
+                        <phase>process-sources</phase>
+
+                        <configuration>
+                            <!-- Specify annotation processor class -->
+                            <processors>
+                                <processor>net.kaurpalang.mirth.annotationsplugin.processor.MirthPluginProcessor</processor>
+                            </processors>
+
+                            <options>
+                                <aggregator.file>${processor.aggregator.path}</aggregator.file>
+                            </options>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
