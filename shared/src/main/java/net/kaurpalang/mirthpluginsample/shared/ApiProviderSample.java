@@ -1,8 +1,9 @@
-package net.kaurpalang.mirth.sample;
+package net.kaurpalang.mirthpluginsample.shared;
 
 import net.kaurpalang.mirth.annotationsplugin.annotation.ApiProvider;
 import net.kaurpalang.mirth.annotationsplugin.type.ApiProviderType;
 
-@ApiProvider(type = ApiProviderType.SERVER_CLASS)
+@ApiProvider(type = ApiProviderType.SERVLET_INTERFACE)
 public class ApiProviderSample {
+
 }
