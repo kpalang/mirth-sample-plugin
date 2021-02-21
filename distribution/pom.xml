@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>net.kaurpalang</groupId>
+        <artifactId>mirthpluginsample</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>distribution</artifactId>
+    <packaging>pom</packaging>
+
+    <!-- These dependencies ensure this submodule runs last -->
+    <dependencies>
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>server</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>shared</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>client</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>net.kaurpalang</groupId>
+                <artifactId>mirth-plugin-maven-plugin</artifactId>
+                <version>${mirth.plugin.version}</version>
+                <executions>
+                    <!--
+                        Create aggregation file
+                        Default phase is INITIALIZE. It's best not change this.
+                    -->
+                    <execution>
+                        <id>generate_aggregator_file</id>
+                        <goals>
+                            <goal>generate-aggregator</goal>
+                        </goals>
+                    </execution>
+
+                    <!--
+                        Generate plugin.xml
+                        Default phase is PREPARE_PACKAGE. It's best not change this.
+                     -->
+                    <execution>
+                        <id>generate_plugin_xml</id>
+                        <goals>
+                            <goal>generate-plugin-xml</goal>
+                        </goals>
+
+                        <!-- Specify plugin details -->
+                        <configuration>
+                            <author>${plugin.author}</author>
+                            <name>${plugin.name}</name>
+                            <path>${plugin.path}</path>
+                            <url>${plugin.url}</url>
+                            <mirthVersion>${plugin.mirthVersion}</mirthVersion>
+                            <pluginVersion>${plugin.version}</pluginVersion>
+                            <outputPath>${project.basedir}/plugin.xml</outputPath>
+                        </configuration>
+                    </execution>
+                </executions>
+
+                <!-- Apply aggregatorPath option to all executions -->
+                <configuration>
+                    <aggregatorPath>${processor.aggregator.path}</aggregatorPath>
+                </configuration>
+            </plugin>
+
+            <!-- Generate plugin zipfile -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${maven.assembly.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <appendAssemblyId>false</appendAssemblyId>
+
+                            <!-- Where to get assembly description file -->
+                            <descriptors>
+                                <descriptor>assembly/zip.xml</descriptor>
+                            </descriptors>
+
+                            <!-- Where should the generated zipfile be placed -->
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+
+                            <!-- Where should the generated zipfile be named -->
+                            <finalName>${plugin.archive.name}</finalName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
