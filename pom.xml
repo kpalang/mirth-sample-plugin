@@ -21,10 +21,10 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <maven.processor.plugin.version>4.5</maven.processor.plugin.version>
-        <maven.assembly.plugin.version>3.3.0</maven.assembly.plugin.version>
+        <maven-processor-plugin.version>4.5</maven-processor-plugin.version>
+        <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
+        <mirth-plugin-maven-plugin.version>1.0-SNAPSHOT</mirth-plugin-maven-plugin.version>
 
-        <mirth.plugin.version>1.0-SNAPSHOT</mirth.plugin.version>
 
         <!-- Where should annotation processor generate aggregation file -->
         <processor.aggregator.path>distribution/aggregator/aggregated.json</processor.aggregator.path>
@@ -51,7 +51,7 @@
         <dependency>
             <groupId>org.bsc.maven</groupId>
             <artifactId>maven-processor-plugin</artifactId>
-            <version>4.5-jdk8</version>
+            <version>4.5</version>
             <type>maven-plugin</type>
         </dependency>
     </dependencies>
@@ -64,7 +64,7 @@
             <plugin>
                 <groupId>org.bsc.maven</groupId>
                 <artifactId>maven-processor-plugin</artifactId>
-                <version>${maven.processor.plugin.version}</version>
+                <version>${maven-processor-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>process</id>

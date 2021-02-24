@@ -39,7 +39,7 @@
             <plugin>
                 <groupId>net.kaurpalang</groupId>
                 <artifactId>mirth-plugin-maven-plugin</artifactId>
-                <version>${mirth.plugin.version}</version>
+                <version>${mirth-plugin-maven-plugin.version}</version>
                 <executions>
                     <!--
                         Create aggregation file
@@ -85,7 +85,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>${maven.assembly.plugin.version}</version>
+                <version>${maven-assembly-plugin.version}</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
