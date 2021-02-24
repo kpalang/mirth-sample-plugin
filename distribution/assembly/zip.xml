@@ -18,7 +18,7 @@
             <outputDirectory>/</outputDirectory>
         </file>
 
-        <!-- Get jar files -->
+        <!-- Get plugin jar files -->
         <file>
             <source>${project.parent.basedir}/server/target/${project.parent.artifactId}-server.jar</source>
             <outputDirectory>/</outputDirectory>
@@ -32,4 +32,27 @@
             <outputDirectory>/</outputDirectory>
         </file>
     </files>
+    <fileSets>
+        <fileSet>
+            <directory>${project.parent.basedir}/libs/runtime/client/</directory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <outputDirectory>/libs</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.parent.basedir}/libs/runtime/shared/</directory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <outputDirectory>/libs</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.parent.basedir}/libs/runtime/server/</directory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <outputDirectory>/libs</outputDirectory>
+        </fileSet>
+    </fileSets>
 </assembly>
