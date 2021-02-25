@@ -32,6 +32,8 @@
             <outputDirectory>/</outputDirectory>
         </file>
     </files>
+
+    <!-- Include libraries needed at runtime -->
     <fileSets>
         <fileSet>
             <directory>${project.parent.basedir}/libs/runtime/client/</directory>
