@@ -38,6 +38,13 @@
         <plugin.archive.name>sampleplugin</plugin.archive.name>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <url>https://nexus.kaurpalang.com/repository/maven-public/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <!-- Helper plugin to handle Mirth plugin specific tasks. -->
         <dependency>
