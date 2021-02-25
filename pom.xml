@@ -23,8 +23,7 @@
 
         <maven-processor-plugin.version>4.5</maven-processor-plugin.version>
         <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
-        <mirth-plugin-maven-plugin.version>1.0-SNAPSHOT</mirth-plugin-maven-plugin.version>
-
+        <mirth-plugin-maven-plugin.version>v1.0.0</mirth-plugin-maven-plugin.version>
 
         <!-- Where should annotation processor generate aggregation file -->
         <processor.aggregator.path>distribution/aggregator/aggregated.json</processor.aggregator.path>
@@ -44,15 +43,7 @@
         <dependency>
             <groupId>net.kaurpalang</groupId>
             <artifactId>mirth-plugin-maven-plugin</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <!-- Another plugin to manage annotation processing -->
-        <dependency>
-            <groupId>org.bsc.maven</groupId>
-            <artifactId>maven-processor-plugin</artifactId>
-            <version>4.5</version>
-            <type>maven-plugin</type>
+            <version>${mirth-plugin-maven-plugin.version}</version>
         </dependency>
     </dependencies>
 
