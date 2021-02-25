@@ -23,6 +23,7 @@
 
         <maven-processor-plugin.version>4.5</maven-processor-plugin.version>
         <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
+        <maven-jarsigner-plugin.version>3.0.0</maven-jarsigner-plugin.version>
         <mirth-plugin-maven-plugin.version>v1.0.0</mirth-plugin-maven-plugin.version>
 
         <!-- Where should annotation processor generate aggregation file -->
@@ -83,6 +84,26 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jarsigner-plugin</artifactId>
+                <version>${maven-jarsigner-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>sign</id>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <keystore>${project.parent.basedir}/certificate/keystore.jks</keystore>
+                    <alias>selfsigned</alias>
+                    <storepass>storepass</storepass>
+                    <keypass>keypass</keypass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
