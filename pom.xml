@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.kaurpalang</groupId>
+    <groupId>com.kaurpalang</groupId>
     <artifactId>mirthpluginsample</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -24,7 +24,7 @@
         <maven-processor-plugin.version>4.5</maven-processor-plugin.version>
         <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
         <maven-jarsigner-plugin.version>3.0.0</maven-jarsigner-plugin.version>
-        <mirth-plugin-maven-plugin.version>v1.0.0</mirth-plugin-maven-plugin.version>
+        <mirth-plugin-maven-plugin.version>1.0.1</mirth-plugin-maven-plugin.version>
 
         <!-- Where should annotation processor generate aggregation file -->
         <processor.aggregator.path>distribution/aggregator/aggregated.json</processor.aggregator.path>
@@ -49,7 +49,7 @@
     <dependencies>
         <!-- Helper plugin to handle Mirth plugin specific tasks. -->
         <dependency>
-            <groupId>net.kaurpalang</groupId>
+            <groupId>com.kaurpalang</groupId>
             <artifactId>mirth-plugin-maven-plugin</artifactId>
             <version>${mirth-plugin-maven-plugin.version}</version>
         </dependency>
