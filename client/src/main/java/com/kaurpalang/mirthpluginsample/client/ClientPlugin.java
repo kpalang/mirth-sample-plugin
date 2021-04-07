@@ -1,4 +1,4 @@
-package net.kaurpalang.mirthpluginsample.client;
+package com.kaurpalang.mirthpluginsample.client;
 
 import net.kaurpalang.mirth.annotationsplugin.annotation.ClientClass;
 

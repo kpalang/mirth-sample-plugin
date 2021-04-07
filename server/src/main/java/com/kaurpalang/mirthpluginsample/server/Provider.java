@@ -1,4 +1,4 @@
-package net.kaurpalang.mirthpluginsample.server;
+package com.kaurpalang.mirthpluginsample.server;
 
 import net.kaurpalang.mirth.annotationsplugin.annotation.ApiProvider;
 import net.kaurpalang.mirth.annotationsplugin.type.ApiProviderType;
