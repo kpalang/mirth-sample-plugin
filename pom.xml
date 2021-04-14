@@ -24,7 +24,7 @@
         <maven-processor-plugin.version>4.5</maven-processor-plugin.version>
         <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
         <maven-jarsigner-plugin.version>3.0.0</maven-jarsigner-plugin.version>
-        <mirth-plugin-maven-plugin.version>1.0.1</mirth-plugin-maven-plugin.version>
+        <mirth-plugin-maven-plugin.version>1.0.2-SNAPSHOT</mirth-plugin-maven-plugin.version>
 
         <!-- Where should annotation processor generate aggregation file -->
         <processor.aggregator.path>distribution/aggregator/aggregated.json</processor.aggregator.path>
@@ -75,7 +75,7 @@
                         <configuration>
                             <!-- Specify annotation processor class -->
                             <processors>
-                                <processor>net.kaurpalang.mirth.annotationsplugin.processor.MirthPluginProcessor</processor>
+                                <processor>com.kaurpalang.mirth.annotationsplugin.processor.MirthPluginProcessor</processor>
                             </processors>
 
                             <options>
