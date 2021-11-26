@@ -27,7 +27,7 @@
         <mirth-plugin-maven-plugin.version>1.0.2-SNAPSHOT</mirth-plugin-maven-plugin.version>
 
         <!-- Where should annotation processor generate aggregation file -->
-        <processor.aggregator.path>distribution/aggregator/aggregated.json</processor.aggregator.path>
+        <processor.aggregator.path>distribution/aggregated.json</processor.aggregator.path>
 
         <!-- Plugin details -->
         <plugin.path>plugintest</plugin.path>
@@ -35,7 +35,7 @@
         <plugin.url>www.com</plugin.url>
         <plugin.author>Kaur Palang</plugin.author>
         <plugin.version>15</plugin.version>
-        <plugin.mirthVersion>3.10.1</plugin.mirthVersion>
+        <plugin.mirthVersion>3.12.0</plugin.mirthVersion>
         <plugin.archive.name>sampleplugin</plugin.archive.name>
     </properties>
 
@@ -52,6 +52,12 @@
             <groupId>com.kaurpalang</groupId>
             <artifactId>mirth-plugin-maven-plugin</artifactId>
             <version>${mirth-plugin-maven-plugin.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mirth.connect</groupId>
+            <artifactId>mirth-server</artifactId>
+            <version>${plugin.mirthVersion}</version>
         </dependency>
     </dependencies>
 
