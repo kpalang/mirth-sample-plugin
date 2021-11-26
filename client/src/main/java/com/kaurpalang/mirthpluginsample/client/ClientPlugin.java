@@ -2,7 +2,7 @@ package com.kaurpalang.mirthpluginsample.client;
 
 import com.kaurpalang.mirth.annotationsplugin.annotation.ClientClass;
 
-@ClientClass
+//@ClientClass
 public class ClientPlugin {
 
 }
