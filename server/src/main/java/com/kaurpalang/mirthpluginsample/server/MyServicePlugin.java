@@ -1,7 +1,7 @@
 package com.kaurpalang.mirthpluginsample.server;
 
 import com.kaurpalang.mirth.annotationsplugin.annotation.ServerClass;
-import com.kaurpalang.mirthpluginsample.shared.Constants;
+import com.kaurpalang.mirthpluginsample.shared.MyConstants;
 import com.kaurpalang.mirthpluginsample.shared.MyPermissions;
 import com.kaurpalang.mirthpluginsample.shared.interfaces.MyServletInterface;
 import com.mirth.connect.client.core.api.util.OperationUtil;
@@ -33,7 +33,7 @@ public class MyServicePlugin implements ServicePlugin {
     @Override
     public ExtensionPermission[] getExtensionPermissions() {
         ExtensionPermission getPermission = new ExtensionPermission (
-                Constants.PLUGIN_POINTNAME,
+                MyConstants.PLUGIN_POINTNAME,
                 MyPermissions.GETSTH,
                 "Allows getting important information from our plugin",
                 OperationUtil.getOperationNamesForPermission(MyPermissions.GETSTH, MyServletInterface.class), new String[] {}
@@ -51,7 +51,7 @@ public class MyServicePlugin implements ServicePlugin {
 
     @Override
     public String getPluginPointName() {
-        return Constants.PLUGIN_POINTNAME;
+        return MyConstants.PLUGIN_POINTNAME;
     }
 
     @Override
