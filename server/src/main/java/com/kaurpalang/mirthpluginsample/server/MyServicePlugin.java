@@ -39,9 +39,7 @@ public class MyServicePlugin implements ServicePlugin {
                 OperationUtil.getOperationNamesForPermission(MyPermissions.GETSTH, MyServletInterface.class), new String[] {}
         );
 
-        return new ExtensionPermission[] {
-                getPermission
-        };
+        return new ExtensionPermission[] {getPermission};
     }
 
     @Override
