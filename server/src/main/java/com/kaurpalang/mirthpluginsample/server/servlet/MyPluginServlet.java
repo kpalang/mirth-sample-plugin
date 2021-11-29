@@ -2,7 +2,7 @@ package com.kaurpalang.mirthpluginsample.server.servlet;
 
 import com.kaurpalang.mirth.annotationsplugin.annotation.ApiProvider;
 import com.kaurpalang.mirth.annotationsplugin.type.ApiProviderType;
-import com.kaurpalang.mirthpluginsample.shared.Constants;
+import com.kaurpalang.mirthpluginsample.shared.MyConstants;
 import com.kaurpalang.mirthpluginsample.shared.interfaces.MyServletInterface;
 import com.kaurpalang.mirthpluginsample.shared.model.MyInfoObject;
 import com.mirth.connect.server.api.MirthServlet;
@@ -15,7 +15,7 @@ import javax.ws.rs.core.SecurityContext;
 public class MyPluginServlet extends MirthServlet implements MyServletInterface {
 
     public MyPluginServlet(@Context HttpServletRequest request, @Context SecurityContext sc) {
-        super(request, sc, Constants.PLUGIN_POINTNAME);
+        super(request, sc, MyConstants.PLUGIN_POINTNAME);
     }
 
     @Override
