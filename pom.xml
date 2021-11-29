@@ -21,10 +21,13 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <mirth.version>3.12.0</mirth.version>
+
         <maven-processor-plugin.version>4.5</maven-processor-plugin.version>
         <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
         <maven-jarsigner-plugin.version>3.0.0</maven-jarsigner-plugin.version>
         <mirth-plugin-maven-plugin.version>1.0.2-SNAPSHOT</mirth-plugin-maven-plugin.version>
+        <lombok.version>1.18.22</lombok.version>
 
         <!-- Where should annotation processor generate aggregation file -->
         <processor.aggregator.path>distribution/aggregated.json</processor.aggregator.path>
@@ -57,7 +60,14 @@
         <dependency>
             <groupId>com.mirth.connect</groupId>
             <artifactId>mirth-server</artifactId>
-            <version>${plugin.mirthVersion}</version>
+            <version>${mirth.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
