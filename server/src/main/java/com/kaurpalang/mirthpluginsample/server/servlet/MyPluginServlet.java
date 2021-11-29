@@ -1,4 +1,4 @@
-package com.kaurpalang.mirthpluginsample.server;
+package com.kaurpalang.mirthpluginsample.server.servlet;
 
 import com.kaurpalang.mirth.annotationsplugin.annotation.ApiProvider;
 import com.kaurpalang.mirth.annotationsplugin.type.ApiProviderType;
@@ -20,7 +20,7 @@ public class MyPluginServlet extends MirthServlet implements MyServletInterface 
 
     @Override
     public MyInfoObject getSomething(String identifier) {
-        String data = String.format("<%s> Some important imformations", identifier);
+        String data = String.format("<%s> Some important informations", identifier);
         return new MyInfoObject(data);
     }
 }
