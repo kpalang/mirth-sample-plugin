@@ -2,7 +2,8 @@
 
 A sample [NextGen Connect](https://github.com/nextgenhealthcare/connect) plugin.
 
-This repository is used in [this guide on wiring Mirth plugins](https://github.com/kpalang/mirth-plugin-guide)
+This repository is used in [this guide on writing Mirth plugins](https://github.com/kpalang/mirth-plugin-guide).
+
 ---
 
 ## Installation
