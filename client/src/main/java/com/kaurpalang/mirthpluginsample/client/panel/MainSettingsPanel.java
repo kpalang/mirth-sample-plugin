@@ -13,6 +13,9 @@ import java.awt.*;
 
 public class MainSettingsPanel extends AbstractSettingsPanel {
 
+    /**
+     * Create component variables
+     */
     private JLabel forcefulLabel;
     private MirthCheckBox forcefulCheckbox;
 
@@ -34,6 +37,9 @@ public class MainSettingsPanel extends AbstractSettingsPanel {
         setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
         setLayout(new MigLayout("insets 12, novisualpadding, hidemode 3, fill, gap 6", "", "[][][][grow]"));
 
+        /**
+         * Instantiate component variables
+         */
         forcefulLabel = new JLabel("Force push:");
         forcefulCheckbox = new MirthCheckBox();
         forcefulLabel.setToolTipText("This is a\nmultiline tooltip ;)");
@@ -47,10 +53,13 @@ public class MainSettingsPanel extends AbstractSettingsPanel {
 
         testRemoteButton = new JButton("Do a thing button");
 
-        JPanel hostDetailsPanel = new JPanel();
-        hostDetailsPanel.setLayout(new MigLayout("insets 12, novisualpadding, hidemode 3, fill, gap 6", "[]12[][grow]", ""));
-        hostDetailsPanel.setBackground(Color.WHITE);
-        hostDetailsPanel.setBorder(
+        /**
+         * Create the base container for our components
+         */
+        JPanel deetsPanel = new JPanel();
+        deetsPanel.setLayout(new MigLayout("insets 12, novisualpadding, hidemode 3, fill, gap 6", "[]12[][grow]", ""));
+        deetsPanel.setBackground(Color.WHITE);
+        deetsPanel.setBorder(
                 BorderFactory.createTitledBorder(
                         BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(204, 204, 204)),
                         "MyPlugin",
@@ -60,15 +69,21 @@ public class MainSettingsPanel extends AbstractSettingsPanel {
                 )
         );
 
-        hostDetailsPanel.add(forcefulLabel, "right");
-        hostDetailsPanel.add(forcefulCheckbox);
-        hostDetailsPanel.add(remoteUsernameLabel, "newline, right");
-        hostDetailsPanel.add(remoteUsernameTextField, "w 168!");
-        hostDetailsPanel.add(remotePasswordLabel, "newline, right");
-        hostDetailsPanel.add(remotePasswordField, "w 168!");
-        hostDetailsPanel.add(testRemoteButton, "newline");
+        /**
+         * Add our components to the base container
+         */
+        deetsPanel.add(forcefulLabel, "right");
+        deetsPanel.add(forcefulCheckbox);
+        deetsPanel.add(remoteUsernameLabel, "newline, right");
+        deetsPanel.add(remoteUsernameTextField, "w 168!");
+        deetsPanel.add(remotePasswordLabel, "newline, right");
+        deetsPanel.add(remotePasswordField, "w 168!");
+        deetsPanel.add(testRemoteButton, "newline");
 
-        add(hostDetailsPanel, "growx");
+        /**
+         * Add base container to Mirth's more base-er container
+         */
+        add(deetsPanel, "growx");
     }
 
     @Override
