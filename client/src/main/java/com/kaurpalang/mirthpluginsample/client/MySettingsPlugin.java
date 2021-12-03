@@ -17,7 +17,7 @@ public class MySettingsPlugin extends SettingsPanelPlugin {
 
     @Override
     public AbstractSettingsPanel getSettingsPanel() {
-        return null; //this.mainSettingsPanel;
+        return this.mainSettingsPanel;
     }
 
     @Override
