@@ -14,6 +14,18 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.mirth.connect</groupId>
+            <artifactId>mirth-client</artifactId>
+            <version>${mirth.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.miglayout</groupId>
+            <artifactId>miglayout</artifactId>
+            <version>${miglayout.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.kaurpalang</groupId>
             <artifactId>shared</artifactId>
             <version>${project.version}</version>
