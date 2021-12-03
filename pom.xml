@@ -28,6 +28,7 @@
         <maven-jarsigner-plugin.version>3.0.0</maven-jarsigner-plugin.version>
         <mirth-plugin-maven-plugin.version>1.0.2-SNAPSHOT</mirth-plugin-maven-plugin.version>
         <lombok.version>1.18.22</lombok.version>
+        <miglayout.version>3.7.4</miglayout.version>
 
         <!-- Where should annotation processor generate aggregation file -->
         <processor.aggregator.path>distribution/aggregated.json</processor.aggregator.path>
