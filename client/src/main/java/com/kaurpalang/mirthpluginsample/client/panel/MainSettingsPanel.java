@@ -28,6 +28,7 @@ public class MainSettingsPanel extends AbstractSettingsPanel {
     private JButton testRemoteButton;
 
     public MainSettingsPanel() {
+        // The name of our tab in the Settings menu
         super(MyConstants.SETTINGS_TABNAME_MAIN);
         initComponents();
     }
