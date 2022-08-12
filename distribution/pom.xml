@@ -84,6 +84,7 @@
                             <name>${plugin.name}</name>
                             <path>${plugin.path}</path>
                             <url>${plugin.url}</url>
+                            <description>${plugin.description}</description>
                             <mirthVersion>${plugin.mirthVersion}</mirthVersion>
                             <pluginVersion>${plugin.version}</pluginVersion>
                             <pluginXmlOutputPath>${project.basedir}/plugin.xml</pluginXmlOutputPath>
