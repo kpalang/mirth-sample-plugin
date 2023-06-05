@@ -69,8 +69,8 @@
 
     <repositories>
         <repository>
-            <id>nexus</id>
-            <url>https://maven.kaurpalang.com/repository/maven-public/</url>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/kpalang/mirth-resources-api/</url>
         </repository>
     </repositories>
 
