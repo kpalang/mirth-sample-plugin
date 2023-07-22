@@ -69,8 +69,8 @@
 
     <repositories>
         <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/kpalang/mirth-resources-api/</url>
+            <id>repsy</id>
+            <url>https://repo.repsy.io/mvn/kpalang/mirthconnect</url>
         </repository>
     </repositories>
 
