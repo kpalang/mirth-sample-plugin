@@ -16,7 +16,7 @@
 
 package com.kaurpalang.mirthpluginsample.server;
 
-import com.kaurpalang.mirth.annotationsplugin.annotation.ServerClass;
+import com.kaurpalang.mirth.annotationsplugin.annotation.MirthServerClass;
 import com.kaurpalang.mirthpluginsample.shared.MyConstants;
 import com.kaurpalang.mirthpluginsample.shared.MyPermissions;
 import com.kaurpalang.mirthpluginsample.shared.interfaces.MyServletInterface;
@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-@ServerClass
+@MirthServerClass
 public class MyServicePlugin implements ServicePlugin {
 
     @Override

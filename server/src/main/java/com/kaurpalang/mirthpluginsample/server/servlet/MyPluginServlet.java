@@ -16,7 +16,7 @@
 
 package com.kaurpalang.mirthpluginsample.server.servlet;
 
-import com.kaurpalang.mirth.annotationsplugin.annotation.ApiProvider;
+import com.kaurpalang.mirth.annotationsplugin.annotation.MirthApiProvider;
 import com.kaurpalang.mirth.annotationsplugin.type.ApiProviderType;
 import com.kaurpalang.mirthpluginsample.shared.MyConstants;
 import com.kaurpalang.mirthpluginsample.shared.interfaces.MyServletInterface;
@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.SecurityContext;
 
-@ApiProvider(type = ApiProviderType.SERVER_CLASS)
+@MirthApiProvider(type = ApiProviderType.SERVER_CLASS)
 public class MyPluginServlet extends MirthServlet implements MyServletInterface {
 
     public MyPluginServlet(@Context HttpServletRequest request, @Context SecurityContext sc) {

@@ -16,7 +16,7 @@
 
 package com.kaurpalang.mirthpluginsample.shared.interfaces;
 
-import com.kaurpalang.mirth.annotationsplugin.annotation.ApiProvider;
+import com.kaurpalang.mirth.annotationsplugin.annotation.MirthApiProvider;
 import com.kaurpalang.mirth.annotationsplugin.type.ApiProviderType;
 import com.kaurpalang.mirthpluginsample.shared.MyPermissions;
 import com.kaurpalang.mirthpluginsample.shared.model.MyInfoObject;
@@ -37,7 +37,7 @@ import javax.ws.rs.core.MediaType;
 @Tag(name = "MyPlugin operations")
 @Consumes({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
 @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
-@ApiProvider(type = ApiProviderType.SERVLET_INTERFACE)
+@MirthApiProvider(type = ApiProviderType.SERVLET_INTERFACE)
 public interface MyServletInterface extends BaseServletInterface {
 
     @GET

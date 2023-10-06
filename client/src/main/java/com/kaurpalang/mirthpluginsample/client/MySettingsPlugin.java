@@ -16,13 +16,13 @@
 
 package com.kaurpalang.mirthpluginsample.client;
 
-import com.kaurpalang.mirth.annotationsplugin.annotation.ClientClass;
+import com.kaurpalang.mirth.annotationsplugin.annotation.MirthClientClass;
 import com.kaurpalang.mirthpluginsample.client.panel.MainSettingsPanel;
 import com.kaurpalang.mirthpluginsample.shared.MyConstants;
 import com.mirth.connect.client.ui.AbstractSettingsPanel;
 import com.mirth.connect.plugins.SettingsPanelPlugin;
 
-@ClientClass
+@MirthClientClass
 public class MySettingsPlugin extends SettingsPanelPlugin {
 
     private MainSettingsPanel mainSettingsPanel;

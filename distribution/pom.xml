@@ -86,15 +86,10 @@
                             <url>${plugin.url}</url>
                             <mirthVersion>${plugin.mirthVersion}</mirthVersion>
                             <pluginVersion>${plugin.version}</pluginVersion>
-                            <outputPath>${project.basedir}/plugin.xml</outputPath>
+                            <pluginXmlOutputPath>${project.basedir}/plugin.xml</pluginXmlOutputPath>
                         </configuration>
                     </execution>
                 </executions>
-
-                <!-- Apply aggregatorPath option to all executions -->
-                <configuration>
-                    <aggregatorPath>${processor.aggregator.path}</aggregatorPath>
-                </configuration>
             </plugin>
 
             <!-- Generate plugin zipfile -->
