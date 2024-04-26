@@ -41,17 +41,17 @@
     </modules>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <mirth.version>4.4.0</mirth.version>
 
-        <maven-processor-plugin.version>4.5</maven-processor-plugin.version>
-        <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
+        <maven-processor-plugin.version>5.1</maven-processor-plugin.version>
+        <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
         <maven-jarsigner-plugin.version>3.0.0</maven-jarsigner-plugin.version>
-        <mirth-plugin-maven-plugin.version>2.0.1</mirth-plugin-maven-plugin.version>
-        <lombok.version>1.18.22</lombok.version>
+        <mirth-plugin-maven-plugin.version>2.0.3</mirth-plugin-maven-plugin.version>
+        <lombok.version>1.18.32</lombok.version>
         <miglayout.version>3.7.4</miglayout.version>
 
         <!-- Where should annotation processor generate aggregation file -->
@@ -64,7 +64,7 @@
         <plugin.author>Kaur Palang</plugin.author>
         <plugin.description>A sample Mirth plugin to showcase my Maven plugin.</plugin.description>
         <plugin.version>15</plugin.version>
-        <plugin.mirthVersion>3.12.0</plugin.mirthVersion>
+        <plugin.mirthVersion>4.5.0</plugin.mirthVersion>
         <plugin.archive.name>sampleplugin</plugin.archive.name>
     </properties>
 
@@ -130,10 +130,6 @@
                             <processors>
                                 <processor>com.kaurpalang.mirth.annotationsplugin.processor.MirthPluginProcessor</processor>
                             </processors>
-
-                            <options>
-                                <aggregator.file>${processor.aggregator.path}</aggregator.file>
-                            </options>
                         </configuration>
                     </execution>
                 </executions>
