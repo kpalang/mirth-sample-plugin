@@ -4,8 +4,6 @@ A sample [NextGen Connect](https://github.com/nextgenhealthcare/connect) plugin.
 
 This repository is used in [this guide on writing Mirth plugins](https://github.com/kpalang/mirth-plugin-guide).
 
----
-
 ## Installation
 1. [Install Java](https://www.javatpoint.com/javafx-how-to-install-java)
 2. [Install Maven](https://www.javatpoint.com/how-to-install-maven)
@@ -17,7 +15,9 @@ This repository is used in [this guide on writing Mirth plugins](https://github.
 
 ## Usage
 
-Use this repository as a base to develop your own plugins.
+> [!TIP]
+> This repository is best used as a template by clicking the green "Use this template" button in the top right corner.
+> Using as a template makes your repository not pick up the changes in the base repo thus avoiding file mismatches. 
 
 **This repository showcases use of [mirth-plugin-maven-plugin-kt](https://github.com/kpalang/mirth-plugin-maven-plugin-kt) to generate `plugin.xml` file!**
 
