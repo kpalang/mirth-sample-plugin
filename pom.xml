@@ -37,7 +37,6 @@
         <module>server</module>
         <module>shared</module>
         <module>client</module>
-        <module>distribution</module>
     </modules>
 
     <properties>
@@ -45,27 +44,23 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <mirth.version>4.4.0</mirth.version>
+        <mirth.version>4.5.0</mirth.version>
 
         <maven-processor-plugin.version>5.1</maven-processor-plugin.version>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
         <maven-jarsigner-plugin.version>3.0.0</maven-jarsigner-plugin.version>
-        <mirth-plugin-maven-plugin.version>2.0.3</mirth-plugin-maven-plugin.version>
+        <mirth-plugin-maven-plugin.version>2.1.0-SNAPSHOT</mirth-plugin-maven-plugin.version>
         <lombok.version>1.18.32</lombok.version>
         <miglayout.version>3.7.4</miglayout.version>
 
-        <!-- Where should annotation processor generate aggregation file -->
-        <processor.aggregator.path>distribution/aggregated.json</processor.aggregator.path>
-
         <!-- Plugin details -->
-        <plugin.path>plugintest</plugin.path>
-        <plugin.name>Sample testing plugin</plugin.name>
-        <plugin.url>www.com</plugin.url>
-        <plugin.author>Kaur Palang</plugin.author>
-        <plugin.description>A sample Mirth plugin to showcase my Maven plugin.</plugin.description>
-        <plugin.version>15</plugin.version>
-        <plugin.mirthVersion>4.5.0</plugin.mirthVersion>
-        <plugin.archive.name>sampleplugin</plugin.archive.name>
+        <mirth.plugin.author>Kaur Palang</mirth.plugin.author>
+        <mirth.plugin.compatible_versions>4.5.0</mirth.plugin.compatible_versions>
+        <mirth.plugin.description>A sample Mirth plugin to showcase my Maven plugin.</mirth.plugin.description>
+        <mirth.plugin.name>Sample Plugin</mirth.plugin.name>
+        <mirth.plugin.path>sampleplugin</mirth.plugin.path>
+        <mirth.plugin.url>www.yourpage.com</mirth.plugin.url>
+        <mirth.plugin.version>${project.version}</mirth.plugin.version>
     </properties>
 
     <repositories>
@@ -113,28 +108,17 @@
         <finalName>${project.parent.artifactId}-${project.artifactId}</finalName>
 
         <plugins>
-            <plugin>
-                <groupId>org.bsc.maven</groupId>
-                <artifactId>maven-processor-plugin</artifactId>
-                <version>${maven-processor-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>process</id>
-                        <goals>
-                            <goal>process</goal>
-                        </goals>
-                        <phase>process-sources</phase>
 
-                        <configuration>
-                            <!-- Specify annotation processor class -->
-                            <processors>
-                                <processor>com.kaurpalang.mirth.annotationsplugin.processor.MirthPluginProcessor</processor>
-                            </processors>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--
+            ###################################################################
+            #
+            # Uncomment the following block to enable method 1 for plugin signing.
+            # If you prefer method 2, leave it commented of just delete it.
+            #
+            ###################################################################
+            -->
 
+            <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jarsigner-plugin</artifactId>
@@ -153,6 +137,28 @@
                     <storepass>storepass</storepass>
                     <keypass>keypass</keypass>
                 </configuration>
+            </plugin>
+           -->
+
+            <plugin>
+                <groupId>org.bsc.maven</groupId>
+                <artifactId>maven-processor-plugin</artifactId>
+                <version>${maven-processor-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>process</id>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                        <phase>process-sources</phase>
+
+                        <configuration>
+                            <processors>
+                                <processor>com.kaurpalang.mirth.annotationsplugin.processor.MirthPluginProcessor</processor>
+                            </processors>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
